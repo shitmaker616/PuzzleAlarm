@@ -20,7 +20,7 @@
             android:layout_margin="20sp"
             android:gravity="center"
             android:textColor="@color/text"
-            android:fontFamily="@font/monsterratBold">
+            android:fontFamily="@font/montserrat_bold">
         </TextView>
 
         <TimePicker
