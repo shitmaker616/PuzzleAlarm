@@ -1,6 +1,7 @@
 package com.example.puzzlealarm.model;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
@@ -16,6 +17,14 @@ public class Alarm {
 
     public Alarm(int id, int hour, int min, PuzzleType puzzleType, boolean isOn) {
         this.id = id;
+        this.hour = hour;
+        this.min = min;
+        this.puzzleType = puzzleType;
+        this.isOn = isOn;
+    }
+
+    @Ignore
+    public Alarm(int hour, int min, PuzzleType puzzleType, boolean isOn) {
         this.hour = hour;
         this.min = min;
         this.puzzleType = puzzleType;
