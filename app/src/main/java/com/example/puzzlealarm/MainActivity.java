@@ -132,10 +132,13 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
     @Override
     public void onClick(Alarm alarm) {
         Intent intent = new Intent(MainActivity.this, AddAlarmActivity.class);
+        intent.putExtra("mode", "edit");
+        intent.putExtra("id", alarm.getId());
         intent.putExtra("hour", alarm.getHour());
         intent.putExtra("min", alarm.getMin());
         intent.putExtra("puzzle_type", alarm.getPuzzleType().name());
         intent.putExtra("enabled", alarm.isOn());
+        intent.putExtra("ringtoneUri", alarm.getRingtoneUri());
 
         startActivityForResult(intent, REQUEST_CODE_EDIT_ALARM);
 
@@ -231,17 +234,14 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if ((requestCode == REQUEST_CODE_ADD_ALARM || resultCode == REQUEST_CODE_EDIT_ALARM)
-                && requestCode == RESULT_OK && data != null) {
+        if ((requestCode == REQUEST_CODE_ADD_ALARM || requestCode == REQUEST_CODE_EDIT_ALARM)
+                && resultCode == RESULT_OK && data != null) {
             int hour = data.getIntExtra("hour", 0);
             int min = data.getIntExtra("min", 0);
             boolean enabled = data.getBooleanExtra("enabled", true);
             String puzzleTypeStr = data.getStringExtra("puzzle_type");
             PuzzleType puzzleType = PuzzleType.valueOf(puzzleTypeStr);
-            Log.d("MainActivity", "hour = " + hour);
-            Log.d("MainActivity", "min = " + min);
-            Log.d("MainActivity", "puzzle_type = " + puzzleType);
-            Log.d("MainActivity", "enabled = " + enabled);
+            String ringtoneUri = data.getStringExtra("ringtoneUri");
 
             if (requestCode == REQUEST_CODE_ADD_ALARM) {
                 Alarm newAlarm = new Alarm(hour, min, puzzleType, enabled);
@@ -249,10 +249,11 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
                     AlarmDataBase.getInstance(getApplicationContext()).alarmDao().insert(newAlarm);
                     loadAlarms();
                 });
-            } else if (resultCode == REQUEST_CODE_EDIT_ALARM) {
+            } else if (requestCode == REQUEST_CODE_EDIT_ALARM) {
                 int id = data.getIntExtra("id", -1);
                 if (id != -1) {
-                    Alarm updateAlarm = new Alarm(hour, min, puzzleType, enabled);
+                    Alarm updateAlarm = new Alarm(id, hour, min, puzzleType, enabled, ringtoneUri);
+                    System.out.println(updateAlarm);
                     Executors.newSingleThreadExecutor().execute(() -> {
                         AlarmDataBase.getInstance(getApplicationContext()).alarmDao().update(updateAlarm);
                         loadAlarms();
@@ -262,9 +263,3 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
         }
     }
 }
-
-// TODO: написать метод для загрузки будильников из БД
-// TODO: написать проверки для андроида
-// TODO: переопределить нажатия по карточкам с будильниками
-// TODO: обработать результаты из NewAlarmActivity
-// TODO: PendingIntent

@@ -14,13 +14,15 @@ public class Alarm {
     private int min;
     private PuzzleType puzzleType;
     private boolean isOn;
+    private String ringtoneUri;
 
-    public Alarm(int id, int hour, int min, PuzzleType puzzleType, boolean isOn) {
+    public Alarm(int id, int hour, int min, PuzzleType puzzleType, boolean isOn, String ringtoneUri) {
         this.id = id;
         this.hour = hour;
         this.min = min;
         this.puzzleType = puzzleType;
         this.isOn = isOn;
+        this.ringtoneUri = ringtoneUri;
     }
 
     @Ignore
@@ -67,4 +69,16 @@ public class Alarm {
     public void setOn(boolean on) {
         isOn = on;
     }
+
+    public String getRingtoneUri() {
+        return ringtoneUri;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Alarm[%02d:%02d, puzzleType='%s', enabled=%b]",
+                hour, min, puzzleType, isOn);
+    }
+
 }

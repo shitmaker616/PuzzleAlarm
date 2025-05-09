@@ -23,4 +23,8 @@ public interface AlarmDao {
 
     @Query("SELECT * FROM alarms ORDER BY hour, min") //взять всё из таблицы alarms
     List<Alarm> getAll();
+
+    //берём 1 будильник
+    @Query("SELECT * FROM alarms WHERE id = :id LIMIT 1")
+    Alarm getById(int id);
 }

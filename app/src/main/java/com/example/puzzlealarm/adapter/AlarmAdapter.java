@@ -51,7 +51,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmViewHol
         holder.textPuzzle.setText(puzzleName);
 
         holder.textEnabled.setText(alarm.isOn() ? "Вкл" : "Выкл");
-        holder.textEnabled.setTextColor(alarm.isOn() ? 0x008000 : 0xff0000);
+        holder.textEnabled.setTextColor(alarm.isOn() ? 0xFF008000 : 0xFFff0000);
 
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onClick(alarm);

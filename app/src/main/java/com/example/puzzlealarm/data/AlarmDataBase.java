@@ -11,7 +11,7 @@ import com.example.puzzlealarm.dao.AlarmDao;
 import com.example.puzzlealarm.model.Alarm;
 import com.example.puzzlealarm.model.PuzzleTypeConverter;
 
-@Database(entities = {Alarm.class}, version = 1)
+@Database(entities = {Alarm.class}, version = 2)
 @TypeConverters({PuzzleTypeConverter.class})
 public abstract class AlarmDataBase extends RoomDatabase {
     private static volatile AlarmDataBase INSTANCE;

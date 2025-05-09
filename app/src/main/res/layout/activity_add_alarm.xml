@@ -15,8 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Выберите время"
-            android:textSize="26sp"
-            android:layout_margin="20sp"
+            android:textSize="28sp"
+            android:layout_margin="30sp"
             android:gravity="center"
             android:textColor="@color/text"
             android:fontFamily="@font/montserrat_bold">
@@ -32,13 +32,12 @@
         </TimePicker>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Выберите тип головоломки"
             android:textSize="20sp"
             android:textColor="@color/text"
             android:fontFamily="@font/montserrat"
-            android:gravity="center"
             android:textStyle="bold">
         </TextView>
 
@@ -48,6 +47,46 @@
             android:layout_height="35dp"
             android:textColor="@color/text">
         </Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Мелодия будильника"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/text">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPickRingtone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выбрать мелодию"
+                android:textColor="@color/text"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold">
+            </Button>
+
+            <TextView
+                android:id="@+id/music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Default"
+                android:textSize="18sp"
+                android:layout_marginLeft="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/text">
+            </TextView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,10 +114,12 @@
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="80dp"
             android:text="Сохранить"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat">
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textColor="@color/text">
         </Button>
 
     </LinearLayout>
