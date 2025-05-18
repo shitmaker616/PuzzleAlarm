@@ -10,8 +10,8 @@ public class MathPuzzleGenerator {
 
     public void generate(){
         // .next создаёт от 0 до 10 не включительно
-        int a = random.nextInt(50) + 1;
-        int b = random.nextInt(50) + 1;
+        int a = random.nextInt(50) + 2;
+        int b = random.nextInt(50) + 2;
         int zn = random.nextInt(2);
 
         if (zn == 0){

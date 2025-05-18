@@ -26,6 +26,14 @@
         android:layout_marginBottom="32dp">
     </include>
 
+    <include
+        android:id="@+id/fifth_puzzle_container"
+        layout="@layout/include_fifth_puzzle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+    </include>
+
     <Button
         android:id="@+id/btnOtmena"
         android:layout_width="wrap_content"

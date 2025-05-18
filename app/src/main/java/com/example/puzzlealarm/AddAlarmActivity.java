@@ -63,7 +63,6 @@ public class AddAlarmActivity extends AppCompatActivity {
 
         //проверка, что мы в режиме редактирования
         if (editIntent != null && "edit".equals(editIntent.getStringExtra("mode"))) {
-            System.out.println("Режим редактирования");
             mode = "edit";
             alarmId = editIntent.getIntExtra("id", -1);
             int hour = editIntent.getIntExtra("hour", 0);

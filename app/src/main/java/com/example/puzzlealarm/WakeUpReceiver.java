@@ -39,7 +39,7 @@ public class WakeUpReceiver extends BroadcastReceiver {
 
         //сбор уведомлений
         Notification notification = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setContentTitle("Задачевый будильник").setContentText("ПОДЪЁМ!!!")
+                .setContentTitle("Будильник").setContentText("Проснись! Задумайся")
                 .setSmallIcon(android.R.drawable.ic_lock_idle_alarm)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setContentIntent(pi)
