@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +56,11 @@ public class WakeUpActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private int alarmId = -1;
     private Alarm alarmFromDb;
+
+    @Override
+    public void onBackPressed(){
+        Toast.makeText(this, "Сначала реши задачу!", Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

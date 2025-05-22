@@ -45,7 +45,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmViewHol
         if (alarm.getPuzzleType() == PuzzleType.MATHEMATICS){
             puzzleName = "Математика";
         } else if (alarm.getPuzzleType() == PuzzleType.ORDER_PUZZLE) {
-            puzzleName = "Цифры от 1 до 16";
+            puzzleName = "От 1 до 16";
         }
 
         holder.textPuzzle.setText(puzzleName);
