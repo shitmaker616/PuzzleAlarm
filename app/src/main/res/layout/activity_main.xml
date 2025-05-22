@@ -16,7 +16,7 @@
         android:textSize="28sp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
-        android:layout_margin="10dp"
+        android:layout_margin="30dp"
         android:textColor="@color/text"
         android:fontFamily="@font/montserrat_bold"/>
 

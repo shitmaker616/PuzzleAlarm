@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:text="Выберите время"
             android:textSize="28sp"
-            android:layout_margin="30sp"
+            android:layout_marginTop="30sp"
             android:gravity="center"
             android:textColor="@color/text"
             android:fontFamily="@font/montserrat_bold">
@@ -27,7 +27,7 @@
             android:id="@+id/time_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:timePickerMode="spinner"
             android:theme="@style/Theme.AppCompat">
         </TimePicker>
@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:text="Мелодия будильника"
             android:textSize="20sp"
             android:fontFamily="@font/montserrat"
@@ -93,7 +93,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="24dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
