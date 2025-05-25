@@ -54,7 +54,7 @@ public class AddAlarmActivity extends AppCompatActivity {
 
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item,
-                new String[]{"Математика", "Цифрыт 1 до 16"});
+                new String[]{"Математика", "Цифры от 1 до 16"});
 
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);

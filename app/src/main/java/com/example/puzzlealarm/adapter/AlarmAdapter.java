@@ -75,7 +75,6 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmViewHol
 
     /**
      * Метод для обновления списка будильников
-     * Вызывает notifyDataSetChanged()
      */
     public void setAlarms(List<Alarm> alarms){
         this.alarms = alarms;

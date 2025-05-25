@@ -9,7 +9,6 @@ public class MathPuzzleGenerator {
     private String question = "";
 
     public void generate(){
-        // .next создаёт от 0 до 10 не включительно
         int a = random.nextInt(50) + 2;
         int b = random.nextInt(50) + 2;
         int zn = random.nextInt(2);

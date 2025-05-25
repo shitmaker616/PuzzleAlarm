@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        checkExactAlarmPermission(); // Проверка разрешения на точные сигналы
-        requestNotificationPermissionIfNeeded(); // Разрешение на отправку уведомлений
-        checkIgnoreBatteryOptimization(); // Предложение снять оптимизацию батареи
+        checkExactAlarmPermission();
+        requestNotificationPermissionIfNeeded();
+        checkIgnoreBatteryOptimization();
 
         RecyclerView recyclerView = findViewById(R.id.recyclerViewAlarms);
         empty = findViewById(R.id.empty_view);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
         loadAlarms();
     }
 
-    // Проверка разрешения на постановку точных сигналов (API 31+)
+    // Проверка разрешения на установку точных сигналов
     private void checkExactAlarmPermission() {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >= 31) {
@@ -108,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements AlarmAdapter.OnTa
         PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
         String packageName = getPackageName();
         if (!pm.isIgnoringBatteryOptimizations(packageName)) {
-            // Диалог с предложением внести в исключения
             new AlertDialog.Builder(this)
                     .setTitle("Снять ограничение по батарее")
                     .setMessage("Для корректной работы будильников добавьте приложение в исключения энергосбережения. Иначе сигналы могут не сработать после закрытия приложения.")
